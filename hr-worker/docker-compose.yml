@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    container_name: hr-worker-pg12
+    image: postgres
+    #restart: always
+    environment:
+      POSTGRES_USER: soturno
+      POSTGRES_PASSWORD: soturno
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+       - ./data-postgres/:/var/lib/postgres
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+networks:
+  default:
+    driver: bridge
+    name: hr-net
