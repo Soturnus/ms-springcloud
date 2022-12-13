@@ -13,3 +13,5 @@ Archaius 1 --> Spring Cloud Config
 # padronizar projetos 
 
 Variaveis de ambiente no git 
+
+todo: organizar comandos para rodar os dockerfile, e subir o compose
